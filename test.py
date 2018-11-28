@@ -3,7 +3,7 @@ from bluetooth.ble import BeaconService
 for i in range(1, 10000):
     print("Loading: {0}%: Gattlib is a cunt".format((i+1)/100))
 
-print("Loaded! Gattlib works? Merlijn memed here XD")
+print("Loaded! Gattlib works? Jasper memed here XD")
 class Beacon(object):
     
     def __init__(self, data, address, devices):
