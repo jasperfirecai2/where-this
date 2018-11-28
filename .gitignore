@@ -1,2 +1,4 @@
 *.sh
 .idea/*
+"sietse den/test/.idea/*"
+"sietse den/test/venv"
