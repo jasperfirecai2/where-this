@@ -1,2 +1,0 @@
-print('oof')
-print('aaaf')
