@@ -1,7 +1,7 @@
 import bluetooth
 from bluetooth.ble import BeaconService
 for i in range(1, 10000):
-    print("Loading: {0}%: Gattlib is a cunt".format((i+1)/100))
+    print("Loading: {0}%: Gattlib is a stupid".format((i+1)/100))
 
 print("Loaded! Gattlib works? Jasper memed here XD")
 class Beacon(object):
