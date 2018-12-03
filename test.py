@@ -25,7 +25,7 @@ class Beacon(object):
         self._power = data[3]
         self._rssi = data[4]
         self._address = address
-        self._floor = input("What floor xD?")
+        self._floor = input("What floor?")
 
     def __str__(self):
         ret = "Beacon: address:{ADDR} uuid:{UUID} major:{MAJOR}"\
