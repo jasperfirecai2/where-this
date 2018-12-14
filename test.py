@@ -1,10 +1,12 @@
 import bluetooth
-from bluetooth.ble import BeaconService
+from bluetooth.ble import BeaconService, DiscoveryService
 
 print("Loaded! Gattlib works?")
+
+
 class Beacon(object):
     
-    def __init__(self, data, address, devices):
+    def __init__(self, data, address, devices): pass
         self._uuid = data[0]
         self._major = data[1]
         self._minor = data[2]
@@ -36,13 +38,25 @@ class Beacon(object):
                         FLOOR=self._floor, DEVICES=self._devices)
         return ret
 
-service = BeaconService()
-devices = service.scan(2)
-print(devices)
-for address, data in list(devices.items()):
+
+serviceB = BeaconService()
+serviceD = DiscoveryService()
+beacons = serviceB.scan(2)
+devices = serviceD.scan(2)
+print("Beacons: \n {}".format(beacons))
+
+for address, data in list(beacons.items()):
     print(address)
     print(data)
     b = Beacon(data, address)
     print(b)
+
+print("Devices: \n {}".format(devices))
+
+for name, address in list(devices.items()):
+    print("name: {}, address: {}".format(name, address))
+    #b = Beacon(data, address)
+    #print(b)
+
 
 print("Done.")
