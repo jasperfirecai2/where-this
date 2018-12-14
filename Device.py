@@ -8,7 +8,7 @@ class Device(object):
         self._devices = list(devicesP.items())
         for name, address in self._devices:
             if address == self._address:
-                self._devices.remove(address)
+                self._devices.remove({name, address})
 
     def __str__(self):
         ret = "Device: name: {NAME} address: {ADDR}" \
