@@ -27,7 +27,7 @@ class Device(object):
                             audio = r.record(source, duration=5)
                             out = r.recognize_google(audio)
                         elif failcount < 10:
-                            out = input("Please type the floor input (too many failed voice attempts)")
+                            out = input("Please type the floor input (too many failed voice attempts)\n")
                         else:
                             print("Too many failed attempts, you will have to assign the floor later")
                             out = "Not assigned"
@@ -41,7 +41,7 @@ class Device(object):
                         print("Cancelling floor input for this device")
                         break
                     except:
-                        print("I didn't quite catch that, try again")
+                        print("Unknown error, try again")
                         failcount += 1
 
         except OSError:
@@ -49,8 +49,9 @@ class Device(object):
             while True:
                 try:
                     if failcount < 5:
-                        out = input("Please type the floor input")
+                        out = input("Please type the floor input\n")
                         out = int(out)
+                        break
                     else:
                         out = "Not assigned"
                         break
@@ -68,6 +69,6 @@ class Device(object):
 
     def __str__(self):
         ret = "Device: name: {NAME} address: {ADDR}" \
-              " floor: {FLOOR} nearby devices: {DEVICES}\n" \
+              " floor: {FLOOR} \n nearby devices: {DEVICES}\n" \
             .format(NAME=self._name, ADDR=self._address, FLOOR=self._floor, DEVICES=self._devices)
         return ret
