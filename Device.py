@@ -26,6 +26,9 @@ class Device(object):
                     break
                 except ValueError:
                     print("I'm not sure if that was a number")
+                except KeyboardInterrupt:
+                    print("Cancelling floor input for this device")
+                    break
                 except:
                     print("I didn't quite catch that, try again")
         return out
