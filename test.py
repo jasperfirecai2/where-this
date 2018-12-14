@@ -1,9 +1,13 @@
 import bluetooth
+import subprocess
 from bluetooth.ble import BeaconService, DiscoveryService
 from Beacon import *
 from Device import *
+print("Fetching updates from github")
+subprocess.call(['./GitPull.sh'])
+print("Updated from github, loading devices")
 
-print("Loaded! Gattlib works?")
+
 
 serviceB = BeaconService()
 serviceD = DiscoveryService()
@@ -11,6 +15,7 @@ beacons = serviceB.scan(2)
 devices = serviceD.discover(2)
 devices2 = devices
 service = BeaconService()
+print("Loaded! Gattlib works?")
 print(devices)
 
 
