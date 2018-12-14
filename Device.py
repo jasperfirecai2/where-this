@@ -7,7 +7,7 @@ class Device(object):
         self._floor = input("What floor?")
         self._devices = []
         for namee, addresss in list(devices.items()):
-            if not addresss == self._address:
+            if not addresss == address:
                 self._devices.append(addresss)
 
     def __str__(self):
