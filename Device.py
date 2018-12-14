@@ -5,22 +5,26 @@ import os
 
 class Device(object):
 
-
     def __init__(self, name, address, devices, index):
         self._name = name
         self._address = address
         self._floor = self.mics(self)
         self._devices = list(devices.items())
-        self._index = index
-        del self._devices[self._index]
-        self._index += 1
+        self._id = index
+        del self._devices[self._id]
 
     @staticmethod
     def mics(self):
         r = sr.Recognizer()
         with sr.Microphone() as source:
-            print("What floor? (use your voice!)")
-            audio = r.record(source, duration=5)
+            while True:
+                try:
+                    print("What floor? (use your voice!)")
+                    audio = r.record(source, duration=5)
+                    break
+                except ValueError:
+                    print("I didn't quite catch that, try again")
+
         out = r.recognize_google(audio)
         return out
 
