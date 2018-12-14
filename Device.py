@@ -5,9 +5,9 @@ import os
 
 class Device(object):
 
-    def __init__(self, name, address, devices, index):
-        self._name = name
+    def __init__(self, address, name, devices, index):
         self._address = address
+        self._name = name
         self._floor = self.mics(self)
         self._devices = list(devices.items())
         self._id = index
@@ -22,9 +22,10 @@ class Device(object):
                     print("What floor? (use your voice!)")
                     audio = r.record(source, duration=5)
                     out = r.recognize_google(audio)
+                    out = int(out)
                     break
                 except ValueError:
-                    print("I'm not sure if that was really a word")
+                    print("I'm not sure if that was a number")
                 except:
                     print("I didn't quite catch that, try again")
         return out
