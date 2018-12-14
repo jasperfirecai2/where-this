@@ -6,9 +6,8 @@ class Device(object):
         self._address = address
         self._floor = input("What floor?")
         self._devices = list(devices.items())
-        self._index = index
-        del self._devices[self._index]
-        self._index += 1
+        self._id = index
+        del self._devices[self._id]
 
     def __str__(self):
         ret = "Device: name: {NAME} address: {ADDR}" \
