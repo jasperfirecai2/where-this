@@ -1,14 +1,14 @@
 
 class Device(object):
 
-    def __init__(self, name, address, devices):
-        self._name = name
-        self._address = address
+    def __init__(self, nameP, addressP, devicesP):
+        self._name = nameP
+        self._address = addressP
         self._floor = input("What floor?")
         self._devices = []
-        for namee, addresss in list(devices.items()):
-            if not addresss == address:
-                self._devices.append(addresss)
+        for name, address in list(devicesP.items()):
+            if not address == self._address:
+                self._devices.append(address)
 
     def __str__(self):
         ret = "Device: name: {NAME} address: {ADDR}" \
