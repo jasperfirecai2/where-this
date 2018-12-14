@@ -24,9 +24,11 @@ for address, data in list(beacons.items()):
 
 print("Devices: \n {}".format(devices))
 
+i = 0
 for name, address in list(devices.items()):
     #print("name: {}, address: {}".format(name, address))
-    d = Device(name, address, devices)
+    d = Device(name, address, devices, i)
+    i += 1
     print(d)
 
 print("Done.")
