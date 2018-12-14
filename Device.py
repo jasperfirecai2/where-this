@@ -22,7 +22,7 @@ class Device(object):
                     print("What floor? (use your voice!)")
                     audio = r.record(source, duration=5)
                     break
-                except ValueError:
+                except UnknownValueError:
                     print("I didn't quite catch that, try again")
 
         out = r.recognize_google(audio)
