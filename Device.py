@@ -5,14 +5,15 @@ import os
 
 class Device(object):
 
-    def __init__(self, nameP, addressP, devicesP):
-        self._name = nameP
-        self._address = addressP
+
+    def __init__(self, name, address, devices, index):
+        self._name = name
+        self._address = address
         self._floor = self.mics()
-        self._devices = devicesP
-        for name, address in list(self._devices.items()):
-            if address == self._address:
-                self._devices.remove(address)
+        self._devices = list(devices.items())
+        self._index = index
+        del self._devices[self._index]
+        self._index += 1
 
     @staticmethod
     def mics(self):
