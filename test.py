@@ -13,14 +13,14 @@ print("Beacons: \n {}".format(beacons))
 for address, data in list(beacons.items()):
     print(address)
     print(data)
-    b = Beacon(data, address)
+    b = Beacon(data, address, beacons)
     print(b)
 
 print("Devices: \n {}".format(devices))
 
 for name, address in list(devices.items()):
     #print("name: {}, address: {}".format(name, address))
-    d = Device(name, address)
+    d = Device(name, address, devices)
     print(d)
 
 print("Done.")
