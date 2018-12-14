@@ -1,11 +1,8 @@
 import bluetooth
-import subprocess
 from bluetooth.ble import BeaconService, DiscoveryService
 from Beacon import *
 from Device import *
-print("Fetching updates from github")
-subprocess.call(['./GitPull.sh'])
-print("Updated from github, loading devices")
+
 
 
 
