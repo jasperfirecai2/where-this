@@ -21,13 +21,12 @@ class Device(object):
                 try:
                     print("What floor? (use your voice!)")
                     audio = r.record(source, duration=5)
+                    out = r.recognize_google(audio)
                     break
                 except ValueError:
                     print("I'm not sure if that was really a word")
                 except:
                     print("I didn't quite catch that, try again")
-
-        out = r.recognize_google(audio)
         return out
 
 
