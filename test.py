@@ -8,7 +8,6 @@ serviceB = BeaconService()
 serviceD = DiscoveryService()
 beacons = serviceB.scan(2)
 devices = serviceD.discover(2)
-devices2 = devices
 print("Beacons: \n {}".format(beacons))
 
 for address, data in list(beacons.items()):
@@ -21,7 +20,7 @@ print("Devices: \n {}".format(devices))
 
 for name, address in list(devices.items()):
     #print("name: {}, address: {}".format(name, address))
-    d = Device(name, address, devices2)
+    d = Device(name, address, devices)
     print(d)
 
 print("Done.")
