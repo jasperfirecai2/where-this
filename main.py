@@ -3,33 +3,29 @@ from bluetooth.ble import BeaconService, DiscoveryService
 from Beacon import *
 from Device import *
 
+print("Loaded! Gattlib works?")
+serviceB = BeaconService()
+serviceD = DiscoveryService()
+beacons = serviceB.scan(2)
+devices = serviceD.discover(2)
+devices2 = devices
+service = BeaconService()
+print(devices)
+print("Beacons: \n {}".format(beacons))
 
-class Main:
-    def __init__(self):
+for address, data in list(beacons.items()):
+    print(address)
+    print(data)
+    b = Beacon(data, address)
+    print(b)
 
-        print("Loaded! Gattlib works?")
-        self._serviceB = BeaconService()
-        self._serviceD = DiscoveryService()
-        self._beacons = self._serviceB.scan(2)
-        self._devices = self._serviceD.discover(2)
-        self._devices2 = self._devices
-        self._service = BeaconService()
-        print(self._devices)
-        print("Beacons: \n {}".format(self._beacons))
+print("Devices: \n {}".format(devices))
 
-        for address, data in list(self._beacons.items()):
-            print(address)
-            print(data)
-            b = Beacon(data, address)
-            print(b)
+i = 0
+for address, name in list(devices.items()):
+    # print("name: {}, address: {}".format(name, address))
+    d = Device(address, name, devices2, i)
+    i += 1
+    print(d)
 
-        print("Devices: \n {}".format(self._devices))
-
-        i = 0
-        for address, name in list(self._devices.items()):
-            # print("name: {}, address: {}".format(name, address))
-            d = Device(address, name, self._devices2, i)
-            i += 1
-            print(d)
-
-        print("Successfully Initialized.")
+print("Successfully Initialized.")
