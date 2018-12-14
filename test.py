@@ -3,7 +3,6 @@ from bluetooth.ble import BeaconService, DiscoveryService
 
 print("Loaded! Gattlib works?")
 
-
 class Beacon(object):
     
     def __init__(self, data, address, devices): pass
