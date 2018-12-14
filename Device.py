@@ -9,7 +9,7 @@ class Device(object):
     def __init__(self, name, address, devices, index):
         self._name = name
         self._address = address
-        self._floor = self.mics()
+        self._floor = self.mics(self)
         self._devices = list(devices.items())
         self._index = index
         del self._devices[self._index]
