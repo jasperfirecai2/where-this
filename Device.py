@@ -29,6 +29,7 @@ class Device(object):
                         out = input("Please type the floor input (too many failed voice attempts)")
                     else:
                         print("Too many failed attempts, you will have to assign the floor later")
+                        out = "Not assigned"
                         break
                     out = int(out)
                     break
