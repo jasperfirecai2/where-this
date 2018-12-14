@@ -4,7 +4,6 @@ from Beacon import *
 from Device import *
 
 
-@classmethod
 class Main:
     def __init__(self):
 
