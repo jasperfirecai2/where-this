@@ -42,7 +42,7 @@ class Beacon(object):
 serviceB = BeaconService()
 serviceD = DiscoveryService()
 beacons = serviceB.scan(2)
-devices = serviceD.scan(2)
+devices = serviceD.discover(2)
 print("Beacons: \n {}".format(beacons))
 
 for address, data in list(beacons.items()):
