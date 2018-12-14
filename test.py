@@ -3,8 +3,9 @@ from bluetooth.ble import BeaconService, DiscoveryService
 
 print("Loaded! Gattlib works?")
 
+
 class Beacon(object):
-    
+
     def __init__(self, data, address, devices):
         self._uuid = data[0]
         self._major = data[1]
