@@ -7,10 +7,8 @@ class Device(object):
         self._floor = input("What floor?")
         self._devices = list(devices.items())
         self._index = index
-        for namee, addresss in self._devices:
-            if addresss == self._address:
-                del self._devices[self._index]
-            self._index += 1
+        del self._devices[self._index]
+        self._index += 1
 
     def __str__(self):
         ret = "Device: name: {NAME} address: {ADDR}" \
