@@ -1,33 +1,15 @@
 import bluetooth
 from bluetooth.ble import BeaconService
-for i in range(1, 10000):
-    print("Loading: {0}%: Gattlib is a cunt".format((i+1)/100))
 
 print("Loaded! Gattlib works?")
-class Beacon(object):
-    
-    def __init__(self, data, address, devices):
-        self._uuid = data[0]
-        self._major = data[1]
-        self._minor = data[2]
-        self._power = data[3]
-        self._rssi = data[4]
-        self._address = address
-        self._floor = input("What floor xd?")
-        self._devices = []
-        for address, data in list(devices.items()):
-            if not self._uuid == data[0]:
-                b = Beacon(data, address)
-                self._devices.append(b)
-    
-    def __init__(self, data, address):
-        self._uuid = data[0]
-        self._major = data[1]
-        self._minor = data[2]
-        self._power = data[3]
-        self._rssi = data[4]
-        self._address = address
-        self._floor = input("What floor xd?")
+
+serviceB = BeaconService()
+serviceD = DiscoveryService()
+beacons = serviceB.scan(2)
+devices = serviceD.discover(2)
+print("Beacons: \n {}".format(beacons))
+
+
     def __str__(self):
         ret = "Beacon: address:{ADDR} uuid:{UUID} major:{MAJOR}"\
                 " minor:{MINOR} txpower:{POWER} rssi:{RSSI}"\
@@ -45,5 +27,12 @@ for address, data in list(devices.items()):
     print(data)
     b = Beacon(data, address)
     print(b)
+
+print("Devices: \n {}".format(devices))
+
+for name, address in list(devices.items()):
+    #print("name: {}, address: {}".format(name, address))
+    d = Device(name, address, devices)
+    print(d)
 
 print("Done.")
