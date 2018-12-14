@@ -6,10 +6,10 @@ class Device(object):
         self._address = address
         self._floor = input("What floor?")
         self._devices = []
-        for name, address in list(devices.items()):
-            if not address == self._address:
-                self._devices.append(address)
-            
+        for namee, addresss in list(devices.items()):
+            if not addresss == self._address:
+                self._devices.append(addresss)
+
     def __str__(self):
         ret = "Device: name: {NAME} address: {ADDR}" \
               " floor: {FLOOR} nearby devices: {DEVICES}\n" \
