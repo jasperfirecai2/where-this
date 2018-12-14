@@ -5,7 +5,7 @@ class Device(object):
         self._name = nameP
         self._address = addressP
         self._floor = input("What floor?")
-        self._devices = devicesP
+        self._devices = list(devicesP.items())
         for name, address in list(self._devices.items()):
             if address == self._address:
                 self._devices.remove(address)
