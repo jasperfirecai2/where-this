@@ -16,6 +16,7 @@ class Device(object):
     @staticmethod
     def mics(self):
         r = sr.Recognizer()
+        out = "Not assigned"
         with sr.Microphone() as source:
             while True:
                 try:
