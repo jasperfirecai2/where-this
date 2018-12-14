@@ -5,16 +5,7 @@ class Device(object):
         self._name = name
         self._address = address
         self._floor = input("What floor?")
-        self._devices = []
-        for address, data in list(devices.items()):
-            if not self._uuid == data[0]:
-                b = Device(data, address)
-                self._devices.append(b)
-
-    def __init__(self, name, address):
-        self._name = name
-        self._address = address
-        self._floor = input("What floor?")
+        self._devices = devices
 
     def __str__(self):
         ret = "Device: name:{NAME} address:{ADDR}" \
