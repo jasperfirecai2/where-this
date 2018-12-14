@@ -1,9 +1,8 @@
 import bluetooth
-from bluetooth.ble import BeaconService, DiscoveryService
-from Beacon import *
-from Device import *
+from bluetooth.ble import BeaconService
 
 print("Loaded! Gattlib works?")
+
 serviceB = BeaconService()
 serviceD = DiscoveryService()
 beacons = serviceB.scan(2)
@@ -11,10 +10,23 @@ devices = serviceD.discover(2)
 devices2 = devices
 print("Beacons: \n {}".format(beacons))
 
-for address, data in list(beacons.items()):
+
+    def __str__(self):
+        ret = "Beacon: address:{ADDR} uuid:{UUID} major:{MAJOR}"\
+                " minor:{MINOR} txpower:{POWER} rssi:{RSSI}"\
+                " floor:{FLOOR} nearby devices:{DEVICES}"\
+                .format(ADDR=self._address, UUID=self._uuid, MAJOR=self._major,
+                        MINOR=self._minor, POWER=self._power, RSSI=self._rssi,
+                        FLOOR=self._floor, DEVICES=self._devices)
+        return ret
+
+service = BeaconService()
+devices = service.scan(2)
+print(devices)
+for address, data in list(devices.items()):
     print(address)
     print(data)
-    b = Beacon(data, address, beacons)
+    b = Beacon(data, address)
     print(b)
 
 print("Devices: \n {}".format(devices))
