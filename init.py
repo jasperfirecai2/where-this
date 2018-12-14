@@ -3,4 +3,4 @@ import subprocess
 print("Fetching updates from github")
 subprocess.call(['./GitPull.sh'])
 print("Updated from github, loading devices")
-import test.py
+import main.py
