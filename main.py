@@ -2,6 +2,7 @@ import bluetooth
 from bluetooth.ble import BeaconService, DiscoveryService
 from Beacon import *
 from Device import *
+from DeviceList import *
 
 print("Loaded! Gattlib works?")
 serviceB = BeaconService()
@@ -20,12 +21,14 @@ for address, data in list(beacons.items()):
     print(b)
 
 print("Devices: \n {}".format(devices))
-
+devicesL = DeviceList('Devices')
 i = 0
 for address, name in list(devices.items()):
     # print("name: {}, address: {}".format(name, address))
     d = Device(address, name, devices2, i)
+    devicesL.add(d)
     i += 1
     print(d)
 
 print("Successfully Initialized.")
+print(devicesL)
