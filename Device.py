@@ -13,19 +13,21 @@ class Device(object):
         self._id = index
         del self._devices[self._id]
 
-        @property
-        def address(self):
-            return self._address
-        @property
-        def name(self):
-            return self._name
-        @property
-        def floor(self):
-            return self._floor
-        @property
-        def devices(self):
-            return self._devices
+    @property
+    def address(self):
+        return self._address
 
+    @property
+    def name(self):
+        return self._name
+
+    @property
+    def floor(self):
+        return self._floor
+
+    @property
+    def devices(self):
+        return self._devices
 
     @staticmethod
     def mics(self):
