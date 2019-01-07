@@ -8,6 +8,7 @@ print("Loaded! Gattlib works?")
 serviceB = BeaconService()
 serviceD = DiscoveryService()
 beacons = serviceB.scan(2)
+beacons2 = beacons
 devices = serviceD.discover(2)
 devices2 = devices
 service = BeaconService()
@@ -16,7 +17,7 @@ print("Beacons: \n {}".format(beacons))
 for address, data in list(beacons.items()):
     print(address)
     print(data)
-    b = Beacon(data, address)
+    b = Beacon(data, address, beacons2)
     print(b)
 
 print("Devices: \n {}".format(devices))
