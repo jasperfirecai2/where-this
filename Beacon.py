@@ -2,7 +2,7 @@
 
 class Beacon(object):
 
-    def __init__(self, data, address, devices):
+    def __init__(self, data, address, devices, index):
         self._uuid = data[0]
         self._major = data[1]
         self._minor = data[2]
@@ -10,10 +10,42 @@ class Beacon(object):
         self._rssi = data[4]
         self._address = address
         self._floor = input("What floor?")
-        self._devices = []
-        for addresss, dataa in list(devices.items()):
-            if not self._uuid == dataa[0]:
-                self._devices.append(dataa[0])
+        self._devices = list(devices.items())
+        self._id = index
+        del self._devices[self._id]
+
+        @property
+        def uuid(self):
+            return self._uuid
+
+        @property
+        def major(self):
+            return self._major
+
+        @property
+        def minor(self):
+            return self._minor
+
+        @property
+        def power(self):
+            return self._power
+
+        @property
+        def rssi(self):
+            return self._rssi
+
+        @property
+        def address(self):
+            return self._address
+
+        @property
+        def floor(self):
+            return self._floor
+
+        @property
+        def devices(self):
+            return self._devices
+
     #
     # def __init__(self, data, address):
     #     self._uuid = data[0]
