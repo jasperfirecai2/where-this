@@ -17,5 +17,5 @@ class DeviceList:
         for Device in self._Devices:
             ret += "Device: name: {NAME} address: {ADDR}\n" \
                    "floor: {FLOOR} ID: {ID}\n" \
-                .format(NAME=Device._name, ADDR=Device._address, FLOOR=Device._floor, ID=Device._id)
+                .format(NAME=Device.name, ADDR=Device.address, FLOOR=Device.floor, ID=Device.id)
         return ret
