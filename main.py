@@ -11,7 +11,6 @@ beacons = serviceB.scan(2)
 devices = serviceD.discover(2)
 devices2 = devices
 service = BeaconService()
-print(devices)
 print("Beacons: \n {}".format(beacons))
 
 for address, data in list(beacons.items()):
