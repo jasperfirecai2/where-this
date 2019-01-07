@@ -14,37 +14,37 @@ class Beacon(object):
         self._id = index
         del self._devices[self._id]
 
-        @property
-        def uuid(self):
-            return self._uuid
+    @property
+    def uuid(self):
+        return self._uuid
 
-        @property
-        def major(self):
-            return self._major
+    @property
+    def major(self):
+        return self._major
 
-        @property
-        def minor(self):
-            return self._minor
+    @property
+    def minor(self):
+        return self._minor
 
-        @property
-        def power(self):
-            return self._power
+    @property
+    def power(self):
+        return self._power
 
-        @property
-        def rssi(self):
-            return self._rssi
+    @property
+    def rssi(self):
+        return self._rssi
 
-        @property
-        def address(self):
-            return self._address
+    @property
+    def address(self):
+        return self._address
 
-        @property
-        def floor(self):
-            return self._floor
+    @property
+    def floor(self):
+        return self._floor
 
-        @property
-        def devices(self):
-            return self._devices
+    @property
+    def devices(self):
+        return self._devices
 
     #
     # def __init__(self, data, address):
