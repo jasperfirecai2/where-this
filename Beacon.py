@@ -2,6 +2,30 @@
 
 class Beacon(object):
 
+    @staticmethod
+    def check(self):
+        failcount = 0
+        out = "Not assigned"
+        while True:
+            try:
+                if failcount < 5:
+                    out = input("Please type the floor input\n")
+                    out = int(out)
+                    break
+                else:
+                    out = "Not assigned"
+                    break
+            except ValueError:
+                print("I'm not sure if that was a number")
+                failcount += 1
+            except KeyboardInterrupt:
+                print("Cancelling floor input for this device")
+                break
+            except:
+                print("unknown error, try again")
+                failcount += 1
+        return out
+
     def __init__(self, data, address, devices, index):
         self._uuid = data[0]
         self._major = data[1]
@@ -9,10 +33,11 @@ class Beacon(object):
         self._power = data[3]
         self._rssi = data[4]
         self._address = address
-        self._floor = input("What floor?")
+        self._floor = ""
         self._devices = list(devices.items())
         self._id = index
         del self._devices[self._id]
+        self._floor = self.check(self)
 
     @property
     def uuid(self):
@@ -45,6 +70,10 @@ class Beacon(object):
     @property
     def devices(self):
         return self._devices
+
+
+
+
 
     #
     # def __init__(self, data, address):
