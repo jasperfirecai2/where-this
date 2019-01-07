@@ -28,6 +28,11 @@ class Device(object):
     @property
     def devices(self):
         return self._devices
+    
+    @property
+    def id(self):
+        return self._id
+
 
     @staticmethod
     def mics(self):
@@ -86,5 +91,5 @@ class Device(object):
     def __str__(self):
         ret = "Device: name: {NAME} address: {ADDR}" \
               " floor: {FLOOR} \n nearby devices: {DEVICES}\n" \
-            .format(NAME=self._name, ADDR=self._address, FLOOR=self._floor, DEVICES=self._devices)
+            .format(NAME=self.name, ADDR=self.address, FLOOR=self.floor, DEVICES=self.devices)
         return ret
