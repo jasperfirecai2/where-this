@@ -1,2 +1,3 @@
 .idea/*
+__pycache__/*
 sietse den/venv/*
