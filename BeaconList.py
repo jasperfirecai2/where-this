@@ -16,9 +16,13 @@ class BeaconList:
     def __str__(self):
         ret = "{COUNT} Beacons in list {NAME}:\n".format(COUNT=self._Size, NAME=self._Name)
         for Beacon in self._Beacons:
-            ret += "Beacon: address: {ADDR} uuid: {UUID} major: {MAJOR}\n" \
-                  " minor: {MINOR} txpower: {POWER} rssi: {RSSI}\n" \
-                  " floor: {FLOOR} nearby devices: {DEVICES}\n" \
+            ret += "Beacon:\n" \
+                   "\taddress: {ADDR}\n" \
+                   "\tuuid: {UUID}\n" \
+                   "\tmajor: {MAJOR} minor: {MINOR} txpower: {POWER}\n" \
+                   "\trssi: {RSSI}\n" \
+                   "\tfloor: {FLOOR}\n" \
+                   "\tnearby devices: {DEVICES}\n" \
                 .format(ADDR=Beacon.address, UUID=Beacon.uuid, MAJOR=Beacon.major,
                         MINOR=Beacon.minor, POWER=Beacon.power, RSSI=Beacon.rssi,
                         FLOOR=Beacon.floor, DEVICES=Beacon.devices)

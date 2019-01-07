@@ -28,7 +28,7 @@ class Device(object):
     @property
     def devices(self):
         return self._devices
-    
+
     @property
     def id(self):
         return self._id
@@ -89,7 +89,10 @@ class Device(object):
         return out
 
     def __str__(self):
-        ret = "Device: name: {NAME} address: {ADDR}" \
-              " floor: {FLOOR} \n nearby devices: {DEVICES}\n" \
+        ret = "Device:\n" \
+              "\tname: {NAME}\n" \
+              "\taddress: {ADDR}\n" \
+              "\tfloor: {FLOOR}\n" \
+              "\tnearby devices: {DEVICES}\n" \
             .format(NAME=self.name, ADDR=self.address, FLOOR=self.floor, DEVICES=self.devices)
         return ret

@@ -15,7 +15,9 @@ class DeviceList:
     def __str__(self):
         ret = "{COUNT} Devices in list {NAME}:\n".format(COUNT=self._Size, NAME=self._Name)
         for Device in self._Devices:
-            ret += "Device: name: {NAME} address: {ADDR}\n" \
-                   "floor: {FLOOR} ID: {ID}\n" \
+            ret += "Device:\n" \
+                   "\tname: {NAME}\n" \
+                   "\taddress: {ADDR}\n" \
+                   "\tfloor: {FLOOR} ID: {ID}\n" \
                 .format(NAME=Device.name, ADDR=Device.address, FLOOR=Device.floor, ID=Device.id)
         return ret

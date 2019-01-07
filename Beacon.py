@@ -86,9 +86,13 @@ class Beacon(object):
     #     self._floor = input("What floor?")
 
     def __str__(self):
-        ret = "Beacon: address: {ADDR} uuid: {UUID} major: {MAJOR}\n" \
-              " minor: {MINOR} txpower: {POWER} rssi: {RSSI}\n" \
-              " floor: {FLOOR} nearby devices: {DEVICES}\n" \
+        ret = "Beacon:\n" \
+              "\taddress: {ADDR}\n" \
+              "\tuuid: {UUID}\n" \
+              "\tmajor: {MAJOR} minor: {MINOR} txpower: {POWER}\n" \
+              "\trssi: {RSSI}\n" \
+              "\tfloor: {FLOOR}\n" \
+              "\tnearby devices: {DEVICES}\n" \
             .format(ADDR=self._address, UUID=self._uuid, MAJOR=self._major,
                     MINOR=self._minor, POWER=self._power, RSSI=self._rssi,
                     FLOOR=self._floor, DEVICES=self._devices)
