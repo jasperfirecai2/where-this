@@ -1,0 +1,5 @@
+
+bluez
+pybluez
+gattlib
+# and more
