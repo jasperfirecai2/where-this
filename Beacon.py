@@ -71,20 +71,6 @@ class Beacon(object):
     def devices(self):
         return self._devices
 
-
-
-
-
-    #
-    # def __init__(self, data, address):
-    #     self._uuid = data[0]
-    #     self._major = data[1]
-    #     self._minor = data[2]
-    #     self._power = data[3]
-    #     self._rssi = data[4]
-    #     self._address = address
-    #     self._floor = input("What floor?")
-
     def __str__(self):
         ret = "Beacon:\n" \
               "\taddress: {ADDR}\n" \
