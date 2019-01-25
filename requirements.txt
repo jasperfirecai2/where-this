@@ -1,5 +1,6 @@
 blueZ
 pybluez
 gattlib
-python-dev
+distutils
+#aka python-dev for debian
 # and more
