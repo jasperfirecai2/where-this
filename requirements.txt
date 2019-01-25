@@ -1,5 +1,5 @@
-
-bluez
+blueZ
 pybluez
 gattlib
+python-dev
 # and more
