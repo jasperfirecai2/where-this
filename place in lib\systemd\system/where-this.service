@@ -1,0 +1,5 @@
+[Unit]
+Description=Program that navigates bluetooth beacons
+
+[Service]
+ExecStart=/home/pi/Wedstrijd/init.py
