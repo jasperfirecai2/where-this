@@ -1,0 +1,7 @@
+[Unit]
+Description=Timer to run wherethis two times a day
+
+[Timer]
+OnCalendar=11:59
+OnCalendar=23:59
+Persistent=true
