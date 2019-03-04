@@ -1,0 +1,6 @@
+[Unit]
+Description=Program that navigates bluetooth beacons
+
+[Service]
+ExecStart=/usr/bin/python3 /home/pi/Wedstrijd/init.py
+Restart=onfailure
