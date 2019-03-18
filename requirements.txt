@@ -1,3 +1,4 @@
+gpiozero
 blueZ
 pybluez
 gattlib
